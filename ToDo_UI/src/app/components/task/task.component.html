@@ -1,0 +1,85 @@
+<div class="card-wrapper">
+  <mat-card class="custom-card">
+    <mat-card-header>
+      <mat-card-title>Create Todo</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="todoForm" (ngSubmit)="onsubmit()">
+      <table class="table" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="custom-field">
+              <mat-label>Task</mat-label>
+              <input matInput formControlName="title" />
+              <mat-error>Required field</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field class="custom-field">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field class="custom-field">
+              <mat-label>Due Date</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="dueDate" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="button-container">
+            <button mat-raised-button color="primary" type="submit">
+              {{ isEditMode ? "Update" : "Create" }}
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card>
+</div>
+
+<div class="mt-5 task-grid">
+  <mat-card *ngFor="let task of paginatedTasks" class="mb-3">
+    <span *ngIf="task.dueDate" class="due-date">{{ task.dueDate | date }}</span>
+    <mat-card-header class="card-header">
+      <mat-card-title [ngClass]="{'completed-task': task.completed}">{{ task.title }}</mat-card-title>
+      <mat-checkbox
+        name="completed"
+        [ngModel]="task.completed"
+        (ngModelChange)="updateToDoStatus(task.id!, $event)">
+      </mat-checkbox>
+    </mat-card-header>
+    <mat-card-content>
+      <p mat-card-subtitle [ngClass]="{'completed-task': task.completed}">{{ task.description }}</p>
+    </mat-card-content>
+    <mat-card-actions class="card-actions">
+      <button mat-icon-button (click)="handleEdit(task)">
+        <mat-icon color="primary">edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteTask(task.id!)">
+        <mat-icon color="accent">delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="pagination">
+  <button mat-raised-button color="primary" [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)">
+    Previous
+  </button>
+  <span>{{ currentPage }}</span>
+  <button mat-raised-button color="primary" [disabled]="currentPage === getTotalPages()" (click)="onPageChange(currentPage + 1)">
+    Next
+  </button>
+</div>
+

@@ -1,0 +1,30 @@
+<div class="analytics-container">
+  <h2><mat-icon>analytics</mat-icon> Task Analytics</h2>
+  <div class="stats">
+    <div class="stat">
+      <mat-icon>list</mat-icon>
+      <h3>Total Tasks</h3>
+      <p>{{ totalTasks }}</p>
+    </div>
+    <div class="stat">
+      <mat-icon>check_circle</mat-icon>
+      <h3>Completed Tasks</h3>
+      <p>{{ completedTasks }}</p>
+    </div>
+    <div class="stat">
+      <mat-icon>playlist_add</mat-icon>
+      <h3>Pending Tasks</h3>
+      <p>{{ pendingTasks }}</p>
+    </div>
+    <div class="stat">
+      <mat-icon>event</mat-icon>
+      <h3>Tasks Due Today</h3>
+      <p>{{ tasksDueToday }}</p>
+    </div>
+    <div class="stat">
+      <mat-icon>error</mat-icon>
+      <h3>Overdue Tasks</h3>
+      <p>{{ overdueTasks }}</p>
+    </div>
+  </div>
+</div>

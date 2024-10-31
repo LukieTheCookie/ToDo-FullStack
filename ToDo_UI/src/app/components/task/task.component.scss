@@ -1,0 +1,104 @@
+.custom-field {
+  width: 100%;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 65vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.custom-card {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+
+.mat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 30px;
+}
+
+.mat-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.card-header mat-card-title {
+  flex-grow: 1;
+}
+
+.card-header mat-checkbox {
+  margin-left: auto;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 16px;
+}
+
+.card-actions button {
+  margin-left: 8px;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #999;
+}
+.due-date {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #777;
+}
+
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+}
+
+.pagination button:first-child {
+  margin-left: 0;
+}
+
+.pagination button:last-child {
+  margin-right: 0;
+}

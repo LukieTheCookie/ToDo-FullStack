@@ -1,0 +1,30 @@
+header {
+  margin-bottom: 20px;
+}
+
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #007bff;
+}
+
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}
+
+.navbar-nav .nav-item .nav-link i {
+  font-size: 20px;
+}
